@@ -10,6 +10,7 @@ cd sistem_sidangakhir
 ## Installasi
 `
 composer install`
+
 `
 cp env .env `
 # konfigurasi db
@@ -22,3 +23,7 @@ database.default.password =
 database.default.DBDriver = MySQL
 ```
 # Menjalankan Server CI4
+`
+php spark serve `
+
+# Menggunakan API di Postman
