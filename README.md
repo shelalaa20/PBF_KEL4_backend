@@ -30,4 +30,4 @@ php spark serve
 ```
 
 ## Menggunakan API di Postman
-http://localhost:8080/nama-endpoint
+```http://localhost:8080/nama-endpoint```
