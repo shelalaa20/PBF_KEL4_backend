@@ -8,12 +8,14 @@ cd sistem_sidangakhir
 ```
 
 ## Installasi
-`
-composer install`
+```
+composer install 
 
-`
-cp env .env `
-# konfigurasi db
+```
+```
+cp env .env
+```
+## konfigurasi db
 edit file .env menjadi seperti berikut
 ```php
 database.default.hostname = localhost
@@ -22,8 +24,10 @@ database.default.username = root
 database.default.password = 
 database.default.DBDriver = MySQL
 ```
-# Menjalankan Server CI4
-`
-php spark serve `
+## Menjalankan Server CI4
+```
+php spark serve 
+```
 
-# Menggunakan API di Postman
+## Menggunakan API di Postman
+http://localhost:8080/nama-endpoint
