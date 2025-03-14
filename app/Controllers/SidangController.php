@@ -26,7 +26,6 @@ class SidangController extends ResourceController
     {
         $json = $this->request->getJSON();
         $data = [
-            'id_sidang' => $json->id_sidang,
             'NIM' => $json->NIM,
             'NIDN' => $json->NIDN,
             'waktu_sidang' => $json->waktu_sidang,
