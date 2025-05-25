@@ -10,9 +10,20 @@ class HasilSidangController extends ResourceController
 
     public function index()
     {
-        return $this->respond($this->model->findAll());
+        $db = \Config\Database::connect();
+        $builder = $db->table('hasil_sidang hs')
+            ->select('hs.id_hasil, hs.id_sidang, hs.nilai, hs.catatan,
+                    m.NIM, m.nama_mahasiswa, d.nama_dosen')
+            ->join('sidang s', 'hs.id_sidang = s.id_sidang')
+            ->join('mahasiswa m', 's.NIM = m.NIM')
+            ->join('dosen d', 's.NIDN = d.NIDN');
+
+        $data = $builder->get()->getResultArray();
+        return $this->respond($data);
     }
 
+
+    
     public function show($id = null)
     {
         $data = $this->model->find($id);

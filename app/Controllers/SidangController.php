@@ -10,7 +10,16 @@ class SidangController extends ResourceController
 
     public function index()
     {
-        return $this->respond($this->model->findAll());
+        $db = \Config\Database::connect();
+
+        $builder = $db->table('sidang s')
+            ->select('s.*, m.nama_mahasiswa, d.nama_dosen')
+            ->join('mahasiswa m', 'm.NIM = s.NIM')
+            ->join('dosen d', 'd.NIDN = s.NIDN');
+
+        $data = $builder->get()->getResultArray();
+
+        return $this->respond($data);
     }
 
     public function show($id = null)
@@ -26,6 +35,7 @@ class SidangController extends ResourceController
     {
         $json = $this->request->getJSON();
         $data = [
+            'id_sidang' => $json->id_sidang,
             'NIM' => $json->NIM,
             'NIDN' => $json->NIDN,
             'waktu_sidang' => $json->waktu_sidang,
@@ -34,7 +44,7 @@ class SidangController extends ResourceController
         $this->model->insert($data);
         return $this->respondCreated(['message' => 'Data Sidang berhasil ditambahkan']);
     }
-
+    
     public function update($id = null)
     {
         $json = $this->request->getJSON();

@@ -53,7 +53,23 @@ class MahasiswaController extends ResourceController
 
     public function delete($id = null)
     {
-        $this->model->delete($id);
-        return $this->respondDeleted(['message' => 'Data berhasil dihapus']);
+        try {
+            // Cek dulu apakah data dengan NIM itu ada
+            $data = $this->model->find($id);
+            if (!$data) {
+                return $this->failNotFound("Data dengan NIM $id tidak ditemukan");
+            }
+    
+            // Coba hapus data
+            if ($this->model->delete($id)) {
+                return $this->respondDeleted(['message' => "Data dengan NIM $id berhasil dihapus"]);
+            } else {
+                return $this->failServerError("Gagal menghapus data dengan NIM $id");
+            }
+    
+        } catch (\Exception $e) {
+            // Tangkap error dan tampilkan
+            return $this->failServerError("Terjadi kesalahan: " . $e->getMessage());
+        }
     }
 }

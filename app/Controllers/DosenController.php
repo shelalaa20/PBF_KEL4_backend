@@ -45,7 +45,15 @@ class DosenController extends ResourceController
 
     public function delete($id = null)
     {
-        $this->model->delete($id);
-        return $this->respondDeleted(['message' => 'Data berhasil dihapus']);
+        try {
+            if (!$this->model->find($id)) {
+                return $this->failNotFound("Dosen dengan NIDN $id tidak ditemukan");
+            }
+
+            $this->model->delete($id);
+            return $this->respondDeleted(['message' => 'Dosen berhasil dihapus']);
+        } catch (\Exception $e) {
+            return $this->failServerError("Gagal menghapus dosen: " . $e->getMessage());
+        }
     }
 }
