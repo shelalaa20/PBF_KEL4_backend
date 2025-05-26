@@ -46,7 +46,7 @@ cd sistem_sidangakhir
 composer install 
 
 ```
-## konfigurasi db
+## 📄 Modifikasi file Database.php
 edit file Database.php menjadi seperti berikut
 
 ```    'hostname'     => 'localhost',
@@ -55,11 +55,39 @@ edit file Database.php menjadi seperti berikut
         'database'     => 'sistem_sidangakhir',
 ```
 ## 📁 Modifikasi App\Models
+- [UserModel.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/UserSidangModel.php)
 - [DosenModel.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/DosenModel.php )
 - [MahasiswaModel.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/MahasiswaModel.php )
+- [SidangModel.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/SidangModel.php)
+- [HasilSidang.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/HasilSidangModel.php)
+- [NotifikasiModel.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/NotifikasiModel.php)
+- [ViewJadwalSidang.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/ViewJadwalSidangModel.php)
+- [ViewNilaiMahasiswa](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/ViewNilaiMahasiswaModel.php)
 
-## Modifikasi App\Controllers
+## 📁 Modifikasi App\Controllers
+- [UserController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/UserController.php)
 - [DosenController.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/DosenController.php )
+- [MahasiswaModel.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/MahasiswaController.php )
+- [SidangController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/SidangController.php)
+- [HasilSidangController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/HasilSidangController.php)
+- [NotifikasiController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/NotifikasiController.php)
+- [ViewJadwalSidangController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/ViewJadwalSidangController.php)
+- [ViewNilaiMahasiswaController](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/ViewNilaiMahasiswaController.php)
+
+## 📄 Modifikasi file Routes.php
+```
+$routes->get('/', 'Home::index');
+$routes->resource('mahasiswa', ['controller' => 'MahasiswaController']);
+$routes->resource('dosen', ['controller' => 'DosenController']);
+$routes->resource('sidang', ['controller' => 'SidangController']);
+$routes->resource('hasil_sidang', ['controller' => 'HasilSidangController']);
+$routes->resource('notifikasi', ['controller' => 'NotifikasiController']);
+$routes->resource('user', ['controller' => 'UserController']);
+$routes->resource('view_jadwalsidang', ['controller' => 'ViewJadwalSidangController']);
+$routes->resource('view_nilaimahasiswa', ['controller' => 'ViewNilaiMahasiswaController']);
+$routes->post('login', 'LoginController::login');
+$routes->get('logout', 'LoginController::logout');
+```
 ## Menjalankan Server CI4
 ```
 php spark serve 
