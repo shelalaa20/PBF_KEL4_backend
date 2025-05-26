@@ -68,7 +68,7 @@ edit file Database.php menjadi seperti berikut
 ## 📁 Modifikasi App\Controllers
 - [UserController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/UserController.php)
 - [DosenController.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/DosenController.php )
-- [MahasiswaModel.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/MahasiswaController.php )
+- [MahasiswaController.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/MahasiswaController.php )
 - [SidangController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/SidangController.php)
 - [HasilSidangController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/HasilSidangController.php)
 - [NotifikasiController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/NotifikasiController.php)
