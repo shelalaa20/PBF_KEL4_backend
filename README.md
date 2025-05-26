@@ -49,7 +49,8 @@ composer install
 ## 📄 Modifikasi file Database.php
 edit file Database.php menjadi seperti berikut
 
-```    'hostname'     => 'localhost',
+```
+        'hostname'     => 'localhost',
         'username'     => 'root',
         'password'     => '',
         'database'     => 'sistem_sidangakhir',
