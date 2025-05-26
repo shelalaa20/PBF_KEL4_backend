@@ -3,12 +3,20 @@
 # 📌Sistem Informasi Sidang Tugas Akhir
 Sistem ini membantu mahasiswa, dosen penguji, dan admin akademik dalam mengelola jadwal dan proses sidang tugas akhir.
 
+### Backend Tools & Technologies
+
+- **Bahasa Pemrograman**: PHP 8.3.17
+- **Framework**: CodeIgniter 4 (CI4)
+- **Database**: MySQL (bawaan dari Laragon)
+- **Local Server**: Laragon
+- **API Testing**: Postman
+  
+---
 ## 🧩 Tentang CodeIgniter 4
 **CodeIgniter 4** adalah sebuah framework PHP yang ringan dan cepat digunakan untuk membangun aplikasi web.  
 Framework ini mendukung konsep **MVC (Model-View-Controller)** yang memisahkan logika program, tampilan, dan pengelolaan data untuk mempermudah pengembangan dan pemeliharaan aplikasi.
 
 ---
-
 * Model
 Bertanggung jawab dalam mengelola data dan berinteraksi langsung dengan database (Create, Read, Update, Delete).
 
@@ -19,6 +27,7 @@ Menyajikan tampilan antarmuka kepada pengguna (menggunakan HTML, CSS, dsb), tanp
 Mengatur alur kerja aplikasi. Menerima permintaan dari pengguna, memprosesnya, memanggil data dari Model, lalu mengirimkan hasilnya ke View.
 
 ---
+## 🧩 Impor Database
 ## 🧩 Buat Project
 * Cek Composer
 
