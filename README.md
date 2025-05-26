@@ -55,10 +55,11 @@ edit file Database.php menjadi seperti berikut
         'database'     => 'sistem_sidangakhir',
 ```
 ## 📁 Modifikasi App\Models
-- [ ]( )
+- [DosenModel.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/DosenModel.php )
+- [MahasiswaModel.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/MahasiswaModel.php )
 
 ## Modifikasi App\Controllers
-
+- [DosenController.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/DosenController.php )
 ## Menjalankan Server CI4
 ```
 php spark serve 
