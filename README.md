@@ -4,7 +4,7 @@
 Sistem ini membantu mahasiswa, dosen penguji, dan admin akademik dalam mengelola jadwal dan proses sidang tugas akhir.
 
 ### Backend Tools & Technologies
-
+- **Visual Studio Code**
 - **Bahasa Pemrograman**: PHP 8.3.17
 - **Framework**: CodeIgniter 4 (CI4)
 - **Database**: MySQL (bawaan dari Laragon)
