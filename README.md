@@ -3,7 +3,7 @@
 # 📌Sistem Informasi Sidang Tugas Akhir
 Sistem ini membantu mahasiswa, dosen penguji, dan admin akademik dalam mengelola jadwal dan proses sidang tugas akhir.
 
-### Backend Tools & Technologies
+## 🧩 Backend Tools & Technologies
 - **Visual Studio Code**
 - **Bahasa Pemrograman**: PHP 8.3.17
 - **Framework**: CodeIgniter 4 (CI4)
@@ -52,7 +52,7 @@ git clone https://github.com/shelalaa20/PBF_KEL4_backend.git
 cd sistem_sidangakhir
 ```
 
-## Installasi
+## 🧩 Installasi
 ```
 composer install 
 
