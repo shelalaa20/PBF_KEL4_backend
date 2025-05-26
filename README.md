@@ -54,6 +54,7 @@ edit file Database.php menjadi seperti berikut
         'password'     => '',
         'database'     => 'sistem_sidangakhir',
 ```
+[klik untuk melihat code keseluruhan](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Config/Database.php)
 ## 📁 Modifikasi App\Models
 - [UserModel.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/UserSidangModel.php)
 - [DosenModel.php ](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/DosenModel.php )
@@ -88,6 +89,7 @@ $routes->resource('view_nilaimahasiswa', ['controller' => 'ViewNilaiMahasiswaCon
 $routes->post('login', 'LoginController::login');
 $routes->get('logout', 'LoginController::logout');
 ```
+[klik untuk melihat code keseluruhan](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Config/Routes.php)
 ## Menjalankan Server CI4
 ```
 php spark serve 
