@@ -111,5 +111,6 @@ php spark serve
 ```
 http://localhost:8080/nama-endpoint
 ```
-[Link Postman](https://app.getpostman.com/join-team?invite_code=0ef869963e2866805998208fbdd0104a6ebea6760c6ea5a2eb51cad8858da335&target_code=f4bedfdacc4cfdc20d01c94db8887aaa)
-[Drive Postman](https://drive.google.com/drive/folders/1oM_-M4-XOv8jatZQ66pT2e_izZ_DCZaM?usp=sharing)
+* [Link Postman](https://app.getpostman.com/join-team?invite_code=0ef869963e2866805998208fbdd0104a6ebea6760c6ea5a2eb51cad8858da335&target_code=f4bedfdacc4cfdc20d01c94db8887aaa)
+
+* [Drive Postman](https://drive.google.com/drive/folders/1oM_-M4-XOv8jatZQ66pT2e_izZ_DCZaM?usp=sharing)
