@@ -3,7 +3,7 @@
 # 📌Sistem Informasi Sidang Tugas Akhir
 Sistem ini membantu mahasiswa, dosen penguji, dan admin akademik dalam mengelola jadwal dan proses sidang tugas akhir.
 
-### Backend Tools & Technologies
+## 🧩 Backend Tools & Technologies
 - **Visual Studio Code**
 - **Bahasa Pemrograman**: PHP 8.3.17
 - **Framework**: CodeIgniter 4 (CI4)
@@ -52,7 +52,7 @@ git clone https://github.com/shelalaa20/PBF_KEL4_backend.git
 cd sistem_sidangakhir
 ```
 
-## Installasi
+## 🧩 Installasi
 ```
 composer install 
 
@@ -75,7 +75,7 @@ edit file Database.php menjadi seperti berikut
 - [HasilSidang.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/HasilSidangModel.php)
 - [NotifikasiModel.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/NotifikasiModel.php)
 - [ViewJadwalSidang.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/ViewJadwalSidangModel.php)
-- [ViewNilaiMahasiswa](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/ViewNilaiMahasiswaModel.php)
+- [ViewNilaiMahasiswa.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Models/ViewNilaiMahasiswaModel.php)
 
 ## 📁 Modifikasi App\Controllers
 - [UserController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/UserController.php)
@@ -85,7 +85,7 @@ edit file Database.php menjadi seperti berikut
 - [HasilSidangController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/HasilSidangController.php)
 - [NotifikasiController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/NotifikasiController.php)
 - [ViewJadwalSidangController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/ViewJadwalSidangController.php)
-- [ViewNilaiMahasiswaController](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/ViewNilaiMahasiswaController.php)
+- [ViewNilaiMahasiswaController.php](https://github.com/shelalaa20/PBF_KEL4_backend/blob/main/app/Controllers/ViewNilaiMahasiswaController.php)
 
 ## 📄 Modifikasi file Routes.php
 ```
@@ -111,3 +111,6 @@ php spark serve
 ```
 http://localhost:8080/nama-endpoint
 ```
+* [Link Postman](https://app.getpostman.com/join-team?invite_code=0ef869963e2866805998208fbdd0104a6ebea6760c6ea5a2eb51cad8858da335&target_code=f4bedfdacc4cfdc20d01c94db8887aaa)
+
+* [Drive Postman](https://drive.google.com/drive/folders/1oM_-M4-XOv8jatZQ66pT2e_izZ_DCZaM?usp=sharing)
