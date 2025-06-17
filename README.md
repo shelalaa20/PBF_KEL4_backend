@@ -415,11 +415,7 @@ Route::delete('/mahasiswa/{npm_mhs}', [MahasiswaController::class, 'destroy'])->
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-
-    {{-- Import Bootstrap CDN --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    {{-- Styling untuk sidebar dan konten --}}
     <style>
         body {
             min-height: 100vh;
@@ -448,20 +444,17 @@ Route::delete('/mahasiswa/{npm_mhs}', [MahasiswaController::class, 'destroy'])->
 </head>
 <body>
 
-    {{-- Sidebar Navigasi --}}
     <div class="sidebar">
         <h4 class="text-center py-3 border-bottom">Mahasiswa App</h4>
         <a href="{{ url('/dashboard') }}">🏠 Home</a>
         <a href="{{ url('/mahasiswa') }}">🎓 Data Mahasiswa</a>
+        <a href="{{ url('/pembimbing') }}">🎓 Data Pembimbing</a>
         <a href="{{ url('/logout') }}" onclick="return confirm('Yakin ingin logout?')">🔓 Logout</a>
     </div>
 
-    {{-- Konten Utama --}}
     <div class="container text-center">
-        <h2 class="fw-bold mb-4">Dashboard Mahasiswa</h2>
-
-        {{-- Card Informasi Jumlah Mahasiswa --}}
-        <div class="row justify-content-center">
+        <h2 class="fw-bold mb-4">Dashboard Sistem Magang</h2>
+        <div class="row justify-content">
             <div class="col-md-4">
                 <div class="card shadow-sm">
                     <div class="card-body">
@@ -470,14 +463,18 @@ Route::delete('/mahasiswa/{npm_mhs}', [MahasiswaController::class, 'destroy'])->
                     </div>
                 </div>
             </div>
+            KALO NAMBAHIN LAGI DISINI
+            
         </div>
     </div>
+        </nav>
 
-    {{-- Slot konten tambahan --}}
-    @yield('content')
+        @yield('content')
+    </div>
 
 </body>
 </html>
+
 
 ```
 ## 7 Membuat tampilan (Views) 
@@ -706,36 +703,34 @@ Masing masing tabel punya folder sendiri, yang berisi 3 file, contohnya yaitu
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Support\Facades\Http;
+
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    // URL endpoint API backend untuk mengambil data mahasiswa
-    protected $api = 'http://localhost:8080/mahasiswa';
+    
 
-    // Method utama untuk menampilkan halaman dashboard
     public function index()
-    {
-        // Cek apakah user sudah login
-        if (!session('logged_in')) {
-            // Jika belum login, redirect ke halaman login
-            return redirect('/login')->with('error', 'Silakan login dulu!');
-        }
+{
+    $jumlahMahasiswa = 0;
+    //NAMBAHIN LAGI DIBAWAH SINI
+ 
 
-        // Ambil data mahasiswa dari API
-        $response = Http::get($this->api);
-
-        // Ambil data JSON dan hitung jumlah mahasiswa
-        $data = $response->json();
-        $jumlahMahasiswa = is_array($data) ? count($data) : 0;
-
-        // Kirim data jumlah mahasiswa ke view dashboard
-        return view('dashboard', compact('jumlahMahasiswa'));
+    if (!session('logged_in')) {
+        return redirect('/login')->with('error', 'Silakan login dulu!');
     }
-}
 
+    $responseMahasiswa = Http::get('http://localhost:8080/mahasiswa');
+    if ($responseMahasiswa->successful()) {
+        $jumlahMahasiswa = count($responseMahasiswa->json());
+    }
+    //BIKIN LAGI DI BAWAH SINI
+
+    //INI JUGA TAMBAHIN
+    return view('dashboard', compact('jumlahMahasiswa'));// koma trs 'tambahan'
+}
+}
 ```
 ## 9 LoginController
 ```
