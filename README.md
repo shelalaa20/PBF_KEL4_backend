@@ -894,6 +894,13 @@ $routes->resource('magang', [
 ]);
 
 ```
+Membuat Repo Github
+git init
+git remote add origin https://github.com/kathrinaaw/Sistem_Manajemen_Magang.git
+git add .
+git commit -m "Initial commit - FE Sistem Manajemen Magang"
+git pull origin master
+git push origin master
 
 
            
