@@ -775,6 +775,125 @@ class LoginController extends Controller
     }
 }
 ```
+##  📄 File: resources/views/login.blade.php
+```
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h4 class="mb-4 text-center">🔐 Login</h4>
+
+    @if(session('error'))
+        <div class="alert alert-danger">{{ session('error') }}</div>
+    @endif
+
+    <form method="POST" action="{{ url('/login') }}" autocomplete="off">
+        @csrf
+
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                class="form-control" 
+                placeholder="Masukkan username"
+                required 
+                autocomplete="off"
+            >
+        </div>
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                class="form-control" 
+                placeholder="Masukkan password"
+                required 
+                autocomplete="new-password"
+            >
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+    </form>
+</div>
+
+</body>
+</html>
+```
+
+## Contoh routes backend
+```
+<?php
+
+use CodeIgniter\Router\RouteCollection;
+
+/**
+ * @var RouteCollection $routes
+ */
+$routes->get('/', 'Home::index');
+
+// Routes untuk Authentication
+$routes->group('auth', function($routes) {
+    $routes->post('login', 'UserController::login');
+    $routes->post('register', 'UserController::register');
+});
+
+// User Management (resource-style manual)
+$routes->group('user', function($routes) {
+    $routes->get('/', 'UserController::getAllUsers');
+    $routes->put('update/(:segment)', 'UserController::updateUser/$1');
+    $routes->delete('delete/(:segment)', 'UserController::deleteUser/$1');
+});
+
+// ===== RESOURCE ROUTES MULAI DARI SINI ===== //
+
+// Mahasiswa API (Laravel-style)
+$routes->resource('mahasiswa', [
+    'controller' => 'MahasiswaController',
+]);
+
+// Pembimbing API
+$routes->resource('pembimbing', [
+    'controller' => 'PembimbingController',
+]);
+
+// Perusahaan API
+$routes->resource('perusahaan', [
+    'controller' => 'PerusahaanController',
+]);
+
+// Magang API
+$routes->resource('magang', [
+    'controller' => 'MagangController',
+]);
+
+```
 
 
            
